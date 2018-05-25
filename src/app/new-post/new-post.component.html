@@ -1,0 +1,8 @@
+<div>
+  <label>Titolo</label>
+  <input #titolo />
+  <label>Contenuto</label>
+  <input #contenuto />
+    <!-- (click) passes input value to save() and then clears the input -->
+  <button (click) = "save(titolo.value,contenuto.value); titolo.value=''; contenuto.value=''">Save</button>
+</div>

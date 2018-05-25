@@ -1,0 +1,9 @@
+<div>
+  <h1>Login</h1>
+  <input type="text" placeholder="Username*" #username>
+  <input type="text" placeholder="Password*" #password>
+  <button type="button" (click)="verify_userpass(username.value,password.value)">Submit</button>
+  <div>
+    <p>{{message}}</p>
+  </div>
+</div>

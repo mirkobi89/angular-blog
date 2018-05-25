@@ -1,0 +1,17 @@
+<div *ngIf="loginservice.logged">
+  <label>Titolo:</label>
+  <input [(ngModel)]="post.titolo" placeholder="titolo">
+  <p>Scritto da {{post.autore}} il {{post.data | date:'medium':'':'it'}}</p>
+  <label>Contenuto:</label>
+  <input [(ngModel)]="post.contenuto" placeholder="contenuto">
+  <button (click)="save()">Salva</button>
+  <button title="Cancella post"(click)="delete(post)">Elimina</button>
+  <button (click)="goBack()">Indietro</button>
+</div>
+
+<div *ngIf="!loginservice.logged">
+  <h1>{{post.titolo}}</h1>
+  <p>Scritto da {{post.autore}} il {{post.data | date:'medium':'':'it'}}</p>
+  <p>{{post.contenuto}}</p>
+  <button (click)="goBack()">Indietro</button>
+</div>

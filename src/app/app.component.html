@@ -1,0 +1,6 @@
+<nav>
+    <a routerLink="/posts"> {{title}}</a> 
+    <a class="login" *ngIf="!loginservice.logged" routerLink="/login"> Login </a>
+    <a class="login" *ngIf="loginservice.logged" routerLink="/posts" (click) = "logout()"> Logout</a>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,24 @@
+div {
+    border: 1px solid rgb(216, 213, 213);
+    padding: 25px;
+    margin: 50px;
+}
+.newpost{
+    border: 1px solid rgb(216, 213, 213);
+    padding: 25px;
+    margin: 50px;
+    background-color: rgba(250, 165, 37, 0.904);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.newpost:hover {
+    background-color: rgba(238, 201, 34, 0.952)
+}
+.details{
+    margin-left: 25px;
+}
+ul{
+  list-style-type: none;  
+}

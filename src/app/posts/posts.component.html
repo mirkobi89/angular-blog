@@ -1,0 +1,16 @@
+<br>
+<div class="newpost" *ngIf="loginservice.logged">
+  <a routerLink="/new">Scrivi un nuovo articolo</a>
+</div>
+<br>
+<div>
+<ul>
+  <li *ngFor="let post of posts">
+    <p>{{ post.titolo }}</p>
+    <p>Scritto da {{ post.autore }} il {{ post.data | date:'medium':'':'it'}}
+      <a class="details" routerLink="/detail/{{post.id}}">></a>
+    </p>
+    <br>
+  </li>
+</ul>
+</div>
