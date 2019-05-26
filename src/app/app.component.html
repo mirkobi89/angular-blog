@@ -1,6 +1,12 @@
-<nav>
-    <a routerLink="/posts"> {{title}}</a> 
-    <a class="login" *ngIf="!loginservice.logged" routerLink="/login"> Login </a>
-    <a class="login" *ngIf="loginservice.logged" routerLink="/posts" (click) = "logout()"> Logout</a>
-</nav>
+	<nav class="navbar navbar-warning bg-warning shadow-sm p-3 mb-5 rounded">
+	  <a class="navbar-brand" routerLink="/posts"><i class="fas fa-home"></i> {{title}}</a>
+	  <ul class="nav justify-content-end">
+	 		<li class="nav-item">
+	    		<a class="nav-link login" *ngIf="!loginservice.logged" routerLink="/login"> Login </a>
+	  		</li>
+	  		<li class="nav-item" >
+	    		<a class="nav-link login" *ngIf="loginservice.logged" routerLink="/posts" (click) = "logout()"> Logout </a>
+	  		</li>
+	 	</ul>
+	</nav>
 <router-outlet></router-outlet>

@@ -1,8 +1,12 @@
-<div>
-  <label>Titolo</label>
-  <input #titolo />
-  <label>Contenuto</label>
-  <input #contenuto />
-    <!-- (click) passes input value to save() and then clears the input -->
-  <button (click) = "save(titolo.value,contenuto.value); titolo.value=''; contenuto.value=''">Save</button>
-</div>
+<form class="card shadow-sm p-3 mb-5 bg-white rounded">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Titolo*" #titolo />
+ 	</div>
+ 	<div class="form-group">
+		<textarea class="form-control" placeholder="Contenuto*" #contenuto></textarea>
+ 	</div>
+ 	<div class="form-group">
+ 		<button type="button" class="btn btn-primary" (click) = "save(titolo.value,contenuto.value); titolo.value=''; contenuto.value=''">Salva</button> 
+ 	</div>
+ 	<!-- (click) passes input value to save() and then clears the input -->
+</form>

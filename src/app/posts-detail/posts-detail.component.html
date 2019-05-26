@@ -1,17 +1,33 @@
-<div *ngIf="loginservice.logged">
-  <label>Titolo:</label>
-  <input [(ngModel)]="post.titolo" placeholder="titolo">
-  <p>Scritto da {{post.autore}} il {{post.data | date:'medium':'':'it'}}</p>
-  <label>Contenuto:</label>
-  <input [(ngModel)]="post.contenuto" placeholder="contenuto">
-  <button (click)="save()">Salva</button>
-  <button title="Cancella post"(click)="delete(post)">Elimina</button>
-  <button (click)="goBack()">Indietro</button>
-</div>
+<form class="card shadow-sm p-3 mb-5 bg-white rounded">
+  <div *ngIf="loginservice.logged card-body">
+    <div class="btn-toolbar justify-content-between">
+      <div class="form-group">
+        <label>Titolo:</label>
+        <textarea class="form-control" [(ngModel)]="post.titolo" name="titolo"></textarea>
+      </div>
+      <div class="btn-group">
+        <button class="form-control"type="button" (click)="save()" class="btn btn-light justify-content-end"><i class="fas fa-save" ></i></button>
+        <button class="form-control"type="button" (click)="delete(post)" class="btn btn-light justify-content-end"><i class="fas fa-trash" ></i></button>
+      </div>
+  </div>
+    <div class="form-group">
+      <label>Contenuto:</label>
+        <textarea class="form-control" [(ngModel)]="post.contenuto" name="contenuto"></textarea>
+    </div>
+    <button class="btn btn-light" (click)="goBack()">Indietro</button>
+  </div>
 
-<div *ngIf="!loginservice.logged">
-  <h1>{{post.titolo}}</h1>
-  <p>Scritto da {{post.autore}} il {{post.data | date:'medium':'':'it'}}</p>
-  <p>{{post.contenuto}}</p>
-  <button (click)="goBack()">Indietro</button>
-</div>
+  <div *ngIf="!loginservice.logged card-body">
+     <div class="form-group">
+        <h5 class="card-title">{{ post.titolo }}</h5>
+      </div>
+      <div class="form-group">
+        <h6 class="card-subtitle mb-2 text-muted">Scritto da {{ post.autore }} il {{ post.data | date:'medium':'':'it'}}</h6>
+      </div>
+      <div class="form-group">
+       <p class="card-text">{{post.contenuto}}</p>
+      </div>
+    <button class="btn btn-light" (click)="goBack()">Indietro</button>
+  </div>
+</form>
+
